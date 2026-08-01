@@ -7,7 +7,7 @@ const {
   getRegistrations,
   deleteRegistration,
   getMyRegistrations,
-} = require("../controllers/registrationController");
+} = require("../controllers/RegistrationController");
 
 const protect = require("../middleware/authMiddleware");
 
