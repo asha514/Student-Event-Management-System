@@ -67,9 +67,9 @@ npm run dev
 ## 🗄️ Database
 
 - MongoDB
-- Mongoose ODM
+- Mongoose compass
 
-- 
+  
 ---
 
 ### 3. Environment Variables
