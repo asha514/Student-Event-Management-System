@@ -1,0 +1,52 @@
+/* Page-level background is set in theme.css.
+   This file contains app-level helpers only. */
+
+
+#root {
+
+  min-height:100vh;
+
+  width:100%;
+
+  overflow-x:hidden;
+
+}
+
+
+/* Smooth app rendering */
+
+#root > * {
+
+  animation:
+  rootFade .5s ease;
+
+}
+
+
+
+@keyframes rootFade {
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+
+/* Prevent unwanted horizontal scroll */
+
+body {
+
+  margin:0;
+
+  overflow-x:hidden;
+
+}

@@ -1,0 +1,949 @@
+/* ===========================================================
+   EventHub design tokens
+   A ticket motif: perforated stubs, mono ticket codes,
+   a warm marigold accent on deep plum ink.
+   =========================================================== */
+
+:root {
+
+  /* ======================
+     Colors
+  ====================== */
+
+  --ink: #1e1b2e;
+  --ink-soft: #322c49;
+
+  --paper: #f5f3fa;
+  --card: #ffffff;
+
+  --accent: #f5a623;
+  --accent-dark: #c97f0e;
+
+  --violet: #6c5ce7;
+  --violet-dark: #5340d6;
+
+  --line: #e1dcf0;
+  --line-strong: #cbc3e3;
+
+  --muted: #6b6580;
+
+  --success:#2f9e64;
+  --success-soft:#e6f5ec;
+
+  --danger:#e6533c;
+  --danger-soft:#fdeae7;
+
+
+  /* ======================
+     Fonts
+  ====================== */
+
+  --font-display: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+
+
+  /* ======================
+     Shape
+  ====================== */
+
+  --radius-sm:8px;
+  --radius-md:14px;
+  --radius-lg:22px;
+
+
+
+  /* Shadows */
+
+  --shadow-card:
+  0 1px 2px rgba(30,27,46,.04),
+  0 12px 28px rgba(30,27,46,.08);
+
+
+  --shadow-pop:
+  0 18px 40px rgba(30,27,46,.16);
+
+
+  --shadow-hover:
+  0 20px 45px rgba(30,27,46,.14);
+
+
+  --glass:
+  rgba(255,255,255,.65);
+
+}
+
+
+
+/* ======================
+   Reset
+====================== */
+
+
+* {
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+-webkit-tap-highlight-color:transparent;
+
+}
+
+
+
+html {
+
+color-scheme:light;
+
+scroll-behavior:smooth;
+
+}
+
+
+
+body {
+
+
+font-family:var(--font-body);
+
+
+background:
+  radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.05) 0%, transparent 50%),
+  radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
+  linear-gradient(
+    120deg,
+    var(--paper),
+    #ffffff
+  );
+
+
+background-size:200% 200%;
+background-attachment: fixed;
+
+
+animation:
+backgroundMove 12s infinite alternate;
+
+
+color:var(--ink);
+
+
+-webkit-font-smoothing:antialiased;
+
+
+}
+
+
+
+@keyframes backgroundMove {
+
+
+from{
+
+background-position:0% 50%;
+
+}
+
+
+to{
+
+background-position:100% 50%;
+
+}
+
+
+}
+
+
+
+
+a {
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+
+
+button,
+input {
+
+font-family:var(--font-body);
+
+}
+
+
+
+h1,
+h2,
+h3 {
+
+font-family:var(--font-display);
+
+font-weight:600;
+
+letter-spacing:-0.01em;
+
+}
+
+
+
+#root {
+
+min-height:100vh;
+
+}
+
+
+
+/* Focus */
+
+:focus-visible {
+
+outline:
+2px solid var(--violet);
+
+outline-offset:2px;
+
+}
+
+
+
+
+/* Reduced motion */
+
+@media(prefers-reduced-motion:reduce){
+
+*,
+*::before,
+*::after{
+
+animation-duration:.001ms!important;
+
+transition-duration:.001ms!important;
+
+}
+
+}
+
+
+
+/* ======================
+   Layout Helpers
+====================== */
+
+
+.eyebrow {
+
+
+font-family:var(--font-mono);
+
+
+font-size:12px;
+
+
+font-weight:500;
+
+
+letter-spacing:.14em;
+
+
+text-transform:uppercase;
+
+
+color:var(--violet);
+
+
+}
+
+
+
+
+.page {
+
+
+animation:
+pageEnter .6s ease forwards;
+
+
+}
+
+
+
+@keyframes pageEnter {
+
+
+from{
+
+
+opacity:0;
+
+
+transform:
+translateY(20px)
+scale(.98);
+
+
+}
+
+
+to{
+
+
+opacity:1;
+
+
+transform:
+translateY(0)
+scale(1);
+
+
+}
+
+
+}
+/* ======================
+   Buttons
+====================== */
+
+
+.btn {
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:8px;
+
+
+font-family:var(--font-body);
+
+
+font-size:15px;
+
+font-weight:600;
+
+
+padding:12px 20px;
+
+
+border-radius:var(--radius-sm);
+
+
+border:1px solid transparent;
+
+
+cursor:pointer;
+
+
+transition:
+all .3s ease;
+
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+
+
+.btn:hover:not(:disabled){
+
+transform:
+translateY(-3px);
+
+
+box-shadow:
+var(--shadow-hover);
+
+}
+
+
+
+.btn:active {
+
+
+transform:
+scale(.96);
+
+
+}
+
+
+
+.btn:disabled {
+
+cursor:not-allowed;
+
+opacity:.65;
+
+transform:none;
+
+}
+
+
+
+.btn-block {
+
+width:100%;
+
+}
+
+
+
+
+.btn-primary {
+
+
+background:var(--accent);
+
+
+color:var(--ink);
+
+
+}
+
+
+
+.btn-primary:hover:not(:disabled){
+
+background:var(--accent-dark);
+
+color:#fff;
+
+}
+
+
+
+
+.btn-dark {
+
+
+background:var(--ink);
+
+
+color:#fff;
+
+
+}
+
+
+
+.btn-dark:hover:not(:disabled){
+
+background:var(--ink-soft);
+
+}
+
+
+
+
+
+.btn-ghost {
+
+
+background:transparent;
+
+
+border-color:
+rgba(255,255,255,.35);
+
+
+color:inherit;
+
+
+}
+
+
+
+.btn-ghost:hover:not(:disabled){
+
+background:
+rgba(255,255,255,.12);
+
+}
+
+
+
+
+
+.btn-outline {
+
+
+background:transparent;
+
+
+border-color:
+var(--line-strong);
+
+
+color:var(--ink);
+
+
+}
+
+
+
+.btn-outline:hover:not(:disabled){
+
+
+border-color:var(--violet);
+
+
+color:var(--violet);
+
+
+}
+
+
+
+
+/* ======================
+   Form Fields
+====================== */
+
+
+.field {
+
+
+margin-bottom:18px;
+
+
+text-align:left;
+
+
+}
+
+
+
+
+.field-label {
+
+
+display:block;
+
+
+font-family:var(--font-mono);
+
+
+font-size:11px;
+
+
+font-weight:500;
+
+
+letter-spacing:.08em;
+
+
+text-transform:uppercase;
+
+
+color:var(--muted);
+
+
+margin-bottom:7px;
+
+
+}
+
+
+
+
+.input {
+
+
+width:100%;
+
+
+padding:13px 14px;
+
+
+border-radius:var(--radius-sm);
+
+
+border:1.5px solid var(--line);
+
+
+background:#fff;
+
+
+font-size:15px;
+
+
+color:var(--ink);
+
+
+outline:none;
+
+
+transition:
+all .3s ease;
+
+
+}
+
+
+
+.input::placeholder {
+
+
+color:#a7a1bd;
+
+
+}
+
+
+
+
+.input:hover {
+
+
+border-color:
+var(--line-strong);
+
+
+}
+
+
+
+
+.input:focus {
+
+
+border-color:
+var(--violet);
+
+
+box-shadow:
+
+0 0 0 4px
+rgba(108,92,231,.12);
+
+
+transform:
+scale(1.01);
+
+
+}
+
+
+
+/* ======================
+   Banners
+====================== */
+
+
+.banner {
+
+
+display:flex;
+
+
+align-items:flex-start;
+
+
+gap:10px;
+
+
+padding:12px 14px;
+
+
+border-radius:var(--radius-sm);
+
+
+font-size:13.5px;
+
+
+line-height:1.45;
+
+
+margin-bottom:18px;
+
+
+animation:
+bannerShow .4s ease;
+
+
+}
+
+
+
+@keyframes bannerShow {
+
+
+from{
+
+
+opacity:0;
+
+
+transform:
+translateY(-10px);
+
+
+}
+
+
+to{
+
+
+opacity:1;
+
+
+transform:
+translateY(0);
+
+
+}
+
+
+}
+
+
+
+
+.banner-error {
+
+
+background:var(--danger-soft);
+
+
+color:#9c3521;
+
+
+}
+
+
+
+.banner-success {
+
+
+background:var(--success-soft);
+
+
+color:#1f7a4c;
+
+
+}
+
+
+
+
+/* ======================
+   Badges
+====================== */
+
+
+.badge {
+
+
+display:inline-flex;
+
+
+align-items:center;
+
+
+gap:5px;
+
+
+font-family:var(--font-mono);
+
+
+font-size:11.5px;
+
+
+font-weight:500;
+
+
+letter-spacing:.03em;
+
+
+padding:5px 10px;
+
+
+border-radius:999px;
+
+
+background:var(--paper);
+
+
+color:var(--muted);
+
+
+border:1px solid var(--line);
+
+
+transition:.3s;
+
+
+}
+
+
+
+.badge:hover {
+
+
+transform:
+translateY(-2px);
+
+
+}
+
+
+
+/* ======================
+   Spinner
+====================== */
+
+
+.spinner {
+
+
+width:16px;
+
+
+height:16px;
+
+
+border-radius:50%;
+
+
+border:
+
+2px solid rgba(0,0,0,.15);
+
+
+border-top-color:currentColor;
+
+
+animation:
+spin .7s linear infinite;
+
+
+}
+
+
+
+@keyframes spin {
+
+
+to{
+
+
+transform:rotate(360deg);
+
+
+}
+
+
+}
+
+
+
+
+/* ======================
+   Empty State
+====================== */
+
+
+.empty-state {
+
+
+text-align:center;
+
+
+padding:64px 24px;
+
+
+border:
+
+1.5px dashed var(--line-strong);
+
+
+border-radius:var(--radius-lg);
+
+
+color:var(--muted);
+
+
+background:
+rgba(255,255,255,.5);
+
+
+animation:
+emptyPop .6s ease;
+
+
+}
+
+
+
+@keyframes emptyPop {
+
+
+from{
+
+
+opacity:0;
+
+
+transform:
+scale(.95);
+
+
+}
+
+
+to{
+
+
+opacity:1;
+
+
+transform:
+scale(1);
+
+
+}
+
+
+}
+
+
+
+
+.empty-state h3 {
+
+
+color:var(--ink);
+
+
+font-size:21px;
+
+
+margin-bottom:8px;
+
+
+}
+
+
+
+.empty-state p {
+
+
+font-size:14.5px;
+
+
+margin-bottom:20px;
+
+
+}
