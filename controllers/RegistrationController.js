@@ -114,6 +114,7 @@ const createRegistration = async (req, res) => {
     });
   }
 };
+   
 // Get all registrations
 const getRegistrations = async (req, res) => {
   try {
