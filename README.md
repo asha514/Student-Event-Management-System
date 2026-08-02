@@ -2,34 +2,41 @@
 
 A full-stack web application designed to simplify college event management by allowing students to explore events, register for events, and manage their participation efficiently.
 
-# Deployment
+---
 
-## Frontend
+## 🚀 Deployment
+
+### Frontend
 - React + Vite
 - Deployed on Netlify
 
-## Backend
+### Backend
 - Node.js + Express
 - Deployed on Render
 
-## Database
+### Database
 - MongoDB Atlas
 
-## Live Demo
-Frontend: https://event-hub-app.netlify.app/
+### 🌐 Live Demo
 
+- **Frontend:** https://event-hub-app.netlify.app/
+- **Backend:**https://student-event-management-system.onrender.com/api
 
-## 🚀 Features
+---
 
-- User Registration and Login
+## ✨ Features
+
+- User Registration & Login
 - JWT Authentication
-- Browse upcoming college events
-- Search and filter events by department
-- Event registration system
-- Prevent duplicate registrations
-- View registered events
-- Responsive modern UI
-- Admin can manage events (CRUD operations)
+- Browse Upcoming College Events
+- Search & Filter Events by Department
+- Event Registration System
+- Prevent Duplicate Registrations
+- View Registered Events
+- Responsive Modern UI
+- Admin Event Management (CRUD)
+
+---
 
 ## 🛠️ Tech Stack
 
@@ -45,53 +52,78 @@ Frontend: https://event-hub-app.netlify.app/
 - Express.js
 
 ### Database
-- MongoDB
+- MongoDB Atlas
+- Mongoose
 
 ### Tools
 - Git & GitHub
 - VS Code
 - Postman
 
+---
+
 ## 📂 Project Structure
+
+```text
 Student-Event-Management-System
 │
 ├── frontend
-│ └── React application
+│   └── React Application
 │
 ├── backend
-│ └── Node.js + Express API
+│   └── Node.js + Express API
 │
 └── README.md
+```
+
+---
+
+## ⚙️ Installation
 
 ### Clone Repository
 
+```bash
 git clone https://github.com/asha514/Code-Alpha-Student-Event-Management-System.git
+```
 
 ### Backend
 
+```bash
 cd backend
 npm install
 npm start
+```
 
 ### Frontend
 
+```bash
 cd frontend
 npm install
 npm run dev
+```
+
+---
 
 ## 🗄️ Database
 
 - MongoDB Atlas
-- Mongoose compass
+- MongoDB Compass
+
+---
 
 ## 🔮 Future Enhancements
 
 - Admin Dashboard
 - Email Notifications
-- Download Registration Pass
 - Event Analytics
+- User Profile Management
 
-- ## 👩‍💻 Developer
+---
 
-Asha
-Full Stack Developer 
+## 👩‍💻 Developer
+
+**Asha**
+
+Full Stack Developer
+
+GitHub: https://github.com/asha514
