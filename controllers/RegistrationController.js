@@ -53,6 +53,7 @@ const createRegistration = async (req, res) => {
     });
 
     // Send confirmation email
+    console.log("📧 Starting email send to:", email);
   transporter.sendMail({
   from: process.env.EMAIL_USER,
   to: email,
@@ -61,6 +62,7 @@ const createRegistration = async (req, res) => {
 })
 .then((info) => {
   console.log("✅ Email sent:", info.response);
+  
 })
 .catch((err) => {
   console.error("❌ Email Error:", err);
