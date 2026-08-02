@@ -2,6 +2,23 @@
 
 A full-stack web application designed to simplify college event management by allowing students to explore events, register for events, and manage their participation efficiently.
 
+# Deployment
+
+## Frontend
+- React + Vite
+- Deployed on Netlify
+
+## Backend
+- Node.js + Express
+- Deployed on Render
+
+## Database
+- MongoDB Atlas
+
+## Live Demo
+Frontend: https://event-hub-app.netlify.app/
+
+
 ## 🚀 Features
 
 - User Registration and Login
@@ -46,11 +63,9 @@ Student-Event-Management-System
 │
 └── README.md
 
-## ⚙️ Installation
-
 ### Clone Repository
 
-git clone https://github.com/asha514/Student-Event-Management-System.git
+git clone https://github.com/asha514/Code-Alpha-Student-Event-Management-System.git
 
 ### Backend
 
@@ -66,24 +81,8 @@ npm run dev
 
 ## 🗄️ Database
 
-- MongoDB
+- MongoDB Atlas
 - Mongoose compass
-
-  
----
-
-### 3. Environment Variables
-
-
-🔐 Environment Variables
-
-Create a `.env` file inside backend folder:
-
-PORT=5000
-
-MONGO_URI=your_mongodb_url
-
-JWT_SECRET=your_secret_key
 
 ## 🔮 Future Enhancements
 
@@ -95,5 +94,4 @@ JWT_SECRET=your_secret_key
 - ## 👩‍💻 Developer
 
 Asha
-
 Full Stack Developer 
