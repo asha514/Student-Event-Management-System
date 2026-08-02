@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import "./registerEvent.css";
+import "./RegisterEvent.css";
 import API from "../services/api";
 import Navbar from "../components/Navbar";
 

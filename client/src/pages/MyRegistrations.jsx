@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import API from "../services/api";
 import Navbar from "../components/Navbar";
 import "./events.css";
-import "./myRegistrations.css";
+import "./MyRegistrations.css";
 
 function MyRegistrations() {
   const [registrations, setRegistrations] = useState([]);
