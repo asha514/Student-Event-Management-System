@@ -53,67 +53,29 @@ const createRegistration = async (req, res) => {
     });
 
     // Send confirmation email
-    try {
-      console.log("before sending email");
-      const info = await transporter.sendMail({
-        from: process.env.EMAIL_USER,
-        to: email,
-        subject: "Event Registration Confirmation 🎉",
-        html: `
-<div style="background:#f4f7fb;padding:30px;font-family:Arial,sans-serif;">
-  <div style="max-width:600px;margin:auto;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.15);">
+  transporter.sendMail({
+  from: process.env.EMAIL_USER,
+  to: email,
+  subject: "Event Registration Confirmation 🎉",
+  html: `YOUR HTML`
+})
+.then((info) => {
+  console.log("✅ Email sent:", info.response);
+})
+.catch((err) => {
+  console.error("❌ Email Error:", err);
+});
+return res.status(201).json({
+  message: "Registration Successful",
+  registration,
+});
+} catch (error) {
+  console.error(error);
 
-    <div style="background:#2563eb;color:#fff;padding:25px;text-align:center;">
-      <h1>🎉 Registration Successful</h1>
-      <p>Student Event Management System</p>
-    </div>
-
-    <div style="padding:25px;">
-      <h2>Hello ${name}, 👋</h2>
-
-      <p>Your registration has been confirmed successfully.</p>
-
-      <hr>
-
-      <p><strong>🎫 Event:</strong> ${event.title}</p>
-      <p><strong>🏫 College:</strong> ${collegeName}</p>
-      <p><strong>📚 Year:</strong> ${year}</p>
-      <p><strong>📍 Venue:</strong> ${event.location}</p>
-      <p><strong>📅 Date:</strong> ${new Date(event.date).toLocaleDateString()}</p>
-      <p><strong>🆔 Registration ID:</strong> ${registration._id}</p>
-
-      <br>
-
-      <p>Thank you for registering.</p>
-    </div>
-
-    <div style="background:#f1f5f9;padding:15px;text-align:center;">
-      © 2026 Student Event Management System
-    </div>
-
-  </div>
-</div>
-`,
-      });
-console.log("after sending email");
-      console.log("✅ Email sent successfully:", info.response);
-
-    } catch (mailError) {
-      console.error("❌ Email sending failed:", mailError.message);
-    }
-
-    return res.status(201).json({
-      message: "Registration Successful",
-      registration,
-    });
-
-  } catch (error) {
-    console.error(error);
-
-    return res.status(500).json({
-      message: error.message,
-    });
-  }
+  return res.status(500).json({
+    message: error.message,
+  });
+}
 };
    
 // Get all registrations
