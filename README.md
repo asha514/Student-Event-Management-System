@@ -75,7 +75,22 @@ Student-Event-Management-System
 │
 └── README.md
 ```
+## 📸 Screenshots
 
+### 🏠 Home Page
+![Home Page](./screenshots/home.jpeg)
+
+### 🎫 Events Page
+![Events Page](./screenshots/events.jpeg)
+
+### 📝 Registration Form
+![Registration Form](./screenshots/myregister.jpeg)
+
+### ✅ Registration Success
+![Registration Success](./screenshots/registersuccess.jpeg)
+
+### 📋 My Registrations
+![My Registrations](./screenshots/dow reg slip copy.jpeg)
 ---
 
 ## ⚙️ Installation
